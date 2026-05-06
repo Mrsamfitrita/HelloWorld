@@ -5,7 +5,7 @@ pipeline {
         // "Статический анализ" - встроенными средствами Maven
         stage('Static Code Analysis') {
             steps {
-                sh 'mvn checkstyle:check'  // или просто echo для галочки
+                bat 'mvn checkstyle:check'
                 echo '✓ Статический анализ выполнен'
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         // Сборка
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
 
